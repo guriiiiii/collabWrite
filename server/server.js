@@ -5,7 +5,7 @@ const defaultValue = "";
 mongoose.connect(process.env.MONGO_URL);
 const io = require("socket.io")(3001,{
     cors:{
-        origin:'http://localhost:3000',
+        origin:'https://collab-write-eb86.onrender.com',
         methods:['GET', 'POST'],
     },
 })

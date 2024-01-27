@@ -3,9 +3,9 @@ const Document = require("./Document")
 require('dotenv').config();
 const defaultValue = "";
 mongoose.connect(process.env.MONGO_URL);
-const io = require("socket.io")("https://collab-write.onrender.com",{
+const io = require("socket.io")(4000,{
     cors:{
-        origin:'https://collab-write-eb86.onrender.com',
+        origin:"http://localhost:3000",
         methods:['GET', 'POST'],
     },
 })

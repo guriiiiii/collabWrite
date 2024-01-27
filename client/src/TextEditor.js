@@ -32,7 +32,7 @@ export default function TextEditor() {
     },[socket, quill, documentId])
 
     useEffect(()=>{
-        const s = io("http://localhost:4000")
+        const s = io("https://collab-write.onrender.com")
         setSocket(s);
 
         return()=>{

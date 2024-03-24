@@ -6,7 +6,6 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const TOOLBAR_OPTIONS = [
-    ['undo', 'redo', 'print', 'spell-check', 'paint-format', 'zoom'],
     [{ header: [1, 2, 3, 4, 5, 6, false] }],
     [{ font: [] }],
     [{ size: ['small', false, 'large', 'huge'] }],

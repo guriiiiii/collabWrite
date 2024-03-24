@@ -13,11 +13,15 @@ export default function DocsbarMenu(){
     const {id:documentId} = useParams();
     console.log(documentId)
     const [name, setName] = useState();
+
+    const api = axios.create({
+        baseURL: "http://localhost:8800/api/"
+    })
     
     useEffect(()=>{
         const getName = async()=>{
             try{
-                const res = await axios.get("docs/get/"+documentId);
+                const res = await api.get("docs/get/"+documentId);
                 console.log(res)
                 setName(res.data.name);
             }catch(err){

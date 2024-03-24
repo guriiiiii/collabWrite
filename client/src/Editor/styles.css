@@ -71,16 +71,44 @@ body{
         display: flex;
         justify-content: center;
     }
+    .container .ql-toolbar.ql-snow{
+        display: flex;
+        justify-content: center;
+    }
 }
 @media screen and (max-width: 400px){
+    .container {
+        font-size: 14px; /* Reduce font size for smaller screens */
+    }
+
+    .ql-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        overflow-x: auto;
+        gap: 5px; /* Add some gap between toolbar items */
+    }
+
+    .ql-toolbar .ql-picker,
+    .ql-toolbar .ql-formats {
+        display: inline-block;
+        margin: 0; /* Reset margin */
+    }
+    .ql-toolbar {
+        /* Adjust toolbar styles for smaller screens */
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
     .container .ql-toolbar.ql-snow{
         margin: 0.3rem;
         padding: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        padding-top: 7%;
         top: 10%;
         border-radius: 10px;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        height: 10vh;
     }
 }

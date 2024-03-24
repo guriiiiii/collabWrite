@@ -3,24 +3,27 @@ import Quill from 'quill';
 import "quill/dist/quill.snow.css";
 import {io} from "socket.io-client";
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 const TOOLBAR_OPTIONS = [
+    ['undo', 'redo', 'print', 'spell-check', 'paint-format', 'zoom'],
     [{ header: [1, 2, 3, 4, 5, 6, false] }],
     [{ font: [] }],
-    [{ list: "ordered" }, { list: "bullet" }],
-    ["bold", "italic", "underline"],
-    [{ color: [] }, { background: [] }],
-    [{ script: "sub" }, { script: "super" }],
-    [{ align: [] }],
-    ["image", "blockquote", "code-block"],
-    ["clean"],
+    [{ size: ['small', false, 'large', 'huge'] }],
+    ['bold', 'italic', 'underline', { color: [] }, { background: [] }],
+    ['link', 'comment', 'image'],
+    [{ align: [] }, 'line-and-paragraph-spacing', 'checklist', { list: 'bullet' }, { list: 'ordered' }, { indent: '-1' }, { indent: '+1' }, 'clean'],
+    ['editing'],
   ]
 
 export default function TextEditor() {
     const [socket, setSocket]= useState();
     const [quill, setQuill]= useState();
     const {id:documentId} = useParams();
+    const name = "guri";
     const INTERVAL_TIME = 2000;
+    console.log(documentId)
+
     useEffect(()=>{
         if(socket==null||quill==null)return
 
@@ -32,7 +35,7 @@ export default function TextEditor() {
     },[socket, quill, documentId])
 
     useEffect(()=>{
-        const s = io("https://collab-write.onrender.com")
+        const s = io("http://localhost:8801")
         setSocket(s);
 
         return()=>{

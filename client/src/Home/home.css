@@ -1,0 +1,330 @@
+.svg-icon.search-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 45%;
+    left: 5%; /* Adjust the position of the icon */
+    transform: translateY(-50%);
+    cursor: pointer;
+  
+    /* On hover: blue strokes */
+    &:focus,
+    &:hover {
+      .search-path {
+        stroke: #299ecc;
+      }
+    }
+  
+    /* On click: thicker black strokes  */
+    &:active {
+      .search-path {
+        stroke: #111516;
+        stroke-width: 2px;
+      }
+    }
+}
+.searchBar{
+    position: relative;
+    width: 50%;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="text"] {
+    width: calc(100% - 30px);
+    padding-right: 30px;
+    height: 6vh;
+    border: none;
+    color: #4d4d4d;
+    background-color: whitesmoke;
+    border-radius: 0.5rem;
+}
+input[type="text"]::placeholder {
+    font-size: 1rem;
+    padding: 10%;
+}
+
+.menu-icon{
+    height: 25px;
+    width: 25px;
+    margin-bottom: 10%;
+    padding-right: 5px;
+    cursor: pointer;
+}
+.mid-section{
+    height: 25%;
+    padding:3% 0%;
+    width: 100%;
+    background-color: rgb(235, 232, 232);
+    margin: 0;
+}
+
+.mid-section p:first-child{
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  margin-left: 20%;
+  margin-bottom: 2%;
+  font-size: 1rem;
+  color:#252525;
+}
+.threeDots{
+  margin-left: 50%;
+  font-size: 1.3rem;
+}
+.mid-section p:last-child{
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  margin: 0;
+  margin-left: 20%;
+  color:#252525;
+}
+
+.add-logo{
+    width: 10%;
+    height: 10%;
+    margin-left: 20%;
+    cursor: pointer;
+}
+
+.createSection{
+  position: fixed; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0; 
+  left: 0; 
+  width: 100vw; 
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  transition: ease-in-out 1s;
+}
+.createBack{
+  background-color: white;
+  padding: 3%;
+  border-radius: 10px;
+}
+
+.createBack input[type="text"]::placeholder{
+  font-size: 0.9rem;
+  width: 100%;
+  border: none;
+  text-align: left;
+  padding: 0;
+}
+.createBack input[type="text"]{
+  width: 100%;
+  border: none;
+  font-family: "Roboto" sans serif;
+  text-align: left;
+  padding-left: 10%;
+}
+
+.btnSection{
+  display: flex;
+  justify-content: space-between;
+}
+
+.createBtn{
+  background-color: #4285F4;
+  color: white;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+.cancelBtn{
+  color: #4285F4;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.docInput{
+  margin-bottom: 10%;
+  border: 1px solid black;
+}
+
+.allDocuments{
+  background-color: white;
+  padding: 2%;
+}
+.allDocHeader{
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.allDocHeader h2{
+  font-weight: 200;
+  font-size: 1rem;
+  margin-left: 10%;
+  color: gray;
+}
+.allDocHeader p{
+  font-weight: 200;
+  font-size: 1rem;
+  margin-left: 20%;
+  color: gray;
+}
+.allDocIcon{
+  color: gray;
+  height: 30%;
+  width: 2.5%;
+  margin-right: 10%;
+}
+.padder{
+  padding: 2%;
+  margin-top: 0;
+  margin-bottom: 5%;
+}
+
+
+.docsbar-container {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    width: 100%;
+    height: 10vh;
+    padding: 1rem;
+    top: 0;
+    z-index: 2;
+    justify-content: space-between;
+    background-color: white;
+  }
+  .docsbar-content,
+  .docsbar-title,
+  .docsbar-title-icons,
+  .docsbar-footer {
+    display: flex;
+    align-items: center;
+  }
+  
+  img {
+    height: 1.2rem;
+    width: 1.2rem;
+    margin-bottom: 0.7rem;
+  }
+  
+  .docsbar-logo {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .docsbar-header {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .docsbar-title h1 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #4d4d4d;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .docsbar-menu {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    list-style: none;
+    color: #252525;
+    margin: 0;
+    margin-bottom: 0.5rem;
+    padding: 0;
+  }
+  
+  .docsbar-menu li {
+    margin-right: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .docsbar-footer img {
+    height: 1.2rem;
+    width: 1.2rem;
+    margin: 0 0.5rem;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #444746;
+    margin: 0 0.7rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  button {
+    border: none;
+    background-color: #c3e7ff;
+    border-radius: 50px;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #444746;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    align-items: center;
+  }
+  
+  i {
+    margin-right: 0.5rem;
+  }
+  
+  .docsbar-footer button:hover {
+    background-color: #b3e0ff;
+  }
+  
+  .profile {
+    border-radius: 50%;
+    height: 2rem !important;
+    width: 2rem !important;
+  }
+  
+  @media print {
+    .docsbar-container {
+      display: none;
+    }
+  }
+
+@media screen and (max-width: 400px) {
+    /* Adjustments for tablets */
+    .docsbar-container {
+        height: 10vh;
+        padding: 0.8rem;
+    }
+
+    .docsbar-title h1 {
+        font-size: 1.2rem;
+        margin-right: 1rem;
+    }
+
+    .docsbar-menu li {
+        display: none;
+    }
+
+    .searchBar{
+      display: none;
+    }
+    .allDocIcon{
+      display: none;
+    }
+    .allDocHeader p{
+      margin-right: 10%;
+    }
+    .threeDots{
+      display: none;
+    }
+    .mid-section{
+      padding: 10%;
+    }
+    .add-logo{
+      height: 25%;
+      width: 25%;
+      margin-top: 5%;
+      margin-bottom: 5%;
+    }
+}
+

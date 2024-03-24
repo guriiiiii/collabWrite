@@ -1,14 +1,24 @@
 const mongoose = require('mongoose');
-const Document = require("./Document")
+const Document = require("./models/Document.js");
+const docRoute = require("./routes/docs.js")
+const express = require('express');
+const cors = require('cors');
+const app = express();
 require('dotenv').config();
 const defaultValue = "";
-mongoose.connect(process.env.MONGO_URL);
-const io = require("socket.io")(4000,{
+
+app.use(express.json());
+app.use(cors());
+
+mongoose.connect(process.env.MONGO_URL).then(()=>console.log(`success`)).catch((err)=>console.log(err));
+app.use("/api/docs", docRoute);
+const io = require("socket.io")(8801,{
     cors:{
-        origin:"https://collab-write-client.onrender.com",
+        origin:"http://localhost:3000",
         methods:['GET', 'POST'],
     },
 })
+
 io.on("connection", socket=>{
     socket.on('get-document', async documentId=>{
         const document = await findOrCreateDocument(documentId);
@@ -24,7 +34,6 @@ io.on("connection", socket=>{
     })
     
 })
-
 async function findOrCreateDocument(id){
     if(id==null) return;
 
@@ -33,3 +42,7 @@ async function findOrCreateDocument(id){
     return await Document.create({_id:id, data:defaultValue})
 }
 
+
+app.listen(8800,()=>{
+    console.log("running")
+ })

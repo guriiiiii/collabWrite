@@ -8,7 +8,10 @@ require('dotenv').config();
 const defaultValue = "";
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3000',
+    methods: 'GET,POST', // Adjust the methods as per your requirement
+  }));
 
 mongoose.connect(process.env.MONGO_URL).then(()=>console.log(`success`)).catch((err)=>console.log(err));
 app.use("/api/docs", docRoute);

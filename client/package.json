@@ -53,5 +53,5 @@
   "devDependencies": {
     "dotenv": "^16.4.5"
   },
-  "proxy":"http://localhost:8800/api/"
+  "proxy": "http://localhost:8800/api/"
 }

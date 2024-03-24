@@ -7,16 +7,13 @@ import home from '../icons/docs-home.svg';
 import './DocsbarMenu.css';
 import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../config';
+
 
 export default function DocsbarMenu(){
     const {id:documentId} = useParams();
     console.log(documentId)
     const [name, setName] = useState();
-
-    const api = axios.create({
-        baseURL: "http://localhost:8800/api/"
-    })
     
     useEffect(()=>{
         const getName = async()=>{

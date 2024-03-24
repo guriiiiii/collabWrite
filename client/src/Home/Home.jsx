@@ -3,7 +3,7 @@ import profile from '../icons/profile.png';
 import home from '../icons/docs-home.svg';
 import { BsThreeDotsVertical } from "react-icons/bs";
 import './home.css';
-import axios from 'axios';
+import api from "../config";
 import { useRef, useState,useEffect } from "react";
 import { v4 as uuidV4 } from 'uuid';
 import { Link } from "react-router-dom";
@@ -17,7 +17,7 @@ export default function Home (){
     useEffect(()=>{
         const getDoc =async()=>{
             try{
-                const doc = await axios.get("docs/get/")
+                const doc = await api.get("docs/get/")
                 setDocs(doc.data)
             }catch(err){
                 console.log(err)
@@ -34,7 +34,7 @@ export default function Home (){
         const name = nameRef.current.value;
         const postData = async()=>{
             try {
-                await axios.post("docs/new", {name,documentId});
+                await api.post("docs/new", {name,documentId});
                 } catch (err) {}
         }
         postData();

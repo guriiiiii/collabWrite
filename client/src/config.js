@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://collab-write-puce.vercel.app/api/"
+    baseURL: "http://localhost:8800/api/"
 })
 
 export default api;

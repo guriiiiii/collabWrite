@@ -46,8 +46,12 @@ async function findOrCreateDocument(id){
     if(document) return document
     return await Document.create({_id:id, data:defaultValue})
 }
+app.get('/', (req, res) => {
+    // Send HTML response to client
+    res.send('<h1>Hello World!</h1>');
+});
 
 
-app.listen(8800,()=>{
+app.listen(8800,(req, res)=>{
     console.log("running")
  })

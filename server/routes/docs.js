@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const Doc = require("../models/Docs");
+const cors = require('cors')
 
+router.use(cors());
 router.post("/new", async(req,res)=>{
     const newDoc = new Doc({
         name:req.body.name,
